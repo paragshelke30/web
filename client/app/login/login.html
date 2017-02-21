@@ -1,0 +1,29 @@
+<div ng-include="'app/navbar/navbar.html'"></div>
+<md-content layout="column" layout-align="center center">
+  <form ng-submit="vm.login($event)">
+    <md-card md-theme="dark-grey" md-theme-watch>
+      <div layout="column" layout-align="center center" layout-margin>
+        <img class="logo-image" src="images/images/logo.png" />
+        <div class="md-headline">{{vm.translations.title}}</div>
+      </div>
+      <md-card-content>
+        <md-input-container class="md-icon-float md-block">
+          <label>{{vm.translations.placeholder.name}}</label>
+          <md-icon md-svg-src="images/mi/account-outline.svg"></md-icon>
+          <input ng-model="vm.user.username" type="text" required md-no-asterisk/>
+        </md-input-container>
+        <md-input-container class="md-icon-float md-block">
+          <label>{{vm.translations.placeholder.password}}</label>
+          <md-icon md-svg-src="images/mi/lock-outline.svg" class="name"></md-icon>
+          <input ng-model="vm.user.password" type="password" required md-no-asterisk/>
+        </md-input-container>
+      </md-card-content>
+      <md-card-actions layout="row" layout-align="end center">
+        <md-button type="submit" class="md-raised md-primary">
+          {{vm.translations.button.login}}
+        </md-button>
+      </md-card-actions>
+    </md-card>
+  </form>
+
+</md-content>

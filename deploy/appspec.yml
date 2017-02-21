@@ -1,0 +1,11 @@
+version: 0.0
+os: linux
+files:
+  - source: /
+    destination: /var/deploy/Web-Admin
+    owner: ec2-user
+hooks:
+  AfterInstall:
+    - location: deploy.sh
+      timeout: 600
+      runas: ec2-user

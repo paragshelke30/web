@@ -1,0 +1,87 @@
+<!doctype html>
+<!--[if lt IE 7]>
+<html class="no-js lt-ie9 lt-ie8 lt-ie7">
+  <![endif]-->
+  <!--[if IE 7]>
+  <html class="no-js lt-ie9 lt-ie8">
+    <![endif]-->
+    <!--[if IE 8]>
+    <html class="no-js lt-ie9">
+      <![endif]-->
+      <!--[if gt IE 8]><!-->
+      <html class="no-js">
+        <!--<![endif]-->
+        <head>
+          <meta charset="utf-8" />
+          <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+          <base href="/" />
+          <title>Kontroll</title>
+          <link rel="shortcut icon" href="images/images/kotroll.tablogo.ico" />
+          <meta name="description" content="" />
+          <meta name="viewport" content="width=device-width" />
+          <!-- build:css(client) app/vendor.css -->
+          <!-- bower:css -->
+          <link rel="stylesheet" href="bower_components/angular-material/angular-material.css" />
+          <link rel="stylesheet" href="bower_components/angular-toastr/dist/angular-toastr.css" />
+          <!-- endbower -->
+          <!-- endbuild -->
+          <!-- build:css({.tmp,client}) app/app.css -->
+          <link rel="stylesheet" href="app/app.css" />
+          <link rel="stylesheet" href="assets/ui-tree/angular-ui-tree.css" />
+          <!-- endbuild -->
+          <link data-require="font-awesome@*" data-semver="4.2.0" rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.css"
+            />
+          <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic"/>
+          <script src="https://maps.google.com/maps/api/js?key=AIzaSyAyuctw-h2jwh-dNpWvriupH2G8r040f58&libraries=placeses,visualization,drawing,geometry,places"></script>
+        </head>
+        <body ng-app="web-admin">
+          <!--[if lt IE 7]>
+          <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+          <![endif]-->
+          <div ui-view="" class="layout-fill"></div>
+          <!--[if lt IE 9]>
+          <script src="bower_components/es5-shim/es5-shim.js"></script>
+          <script src="bower_components/json3/lib/json3.min.js"></script>
+          <![endif]-->
+          <!-- build:js({client,node_modules}) app/vendor.js -->
+          <!-- bower:js -->
+          <script src="bower_components/angular/angular.js"></script>
+          <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+          <script src="bower_components/angular-animate/angular-animate.js"></script>
+          <script src="bower_components/angular-aria/angular-aria.js"></script>
+          <script src="bower_components/angular-messages/angular-messages.js"></script>
+          <script src="bower_components/angular-material/angular-material.js"></script>
+          <script src="bower_components/lodash/lodash.js"></script>
+          <script src="bower_components/object-fit-images/dist/ofi.browser.js"></script>
+          <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+          <script src="bower_components/nf-localization/dist/localizationService.js"></script>
+          <script src="bower_components/angular-toastr/dist/angular-toastr.tpls.js"></script>
+          <!-- endbower -->
+          <!-- endbuild -->
+          <!-- build:js({.tmp,client}) app/app.js -->
+          <script src="app/app.module.js"></script>
+          <script src="app/app.config.js"></script>
+          <script src="app/app.routes.js"></script>
+          <script src="app/app.run.js"></script>
+          <!--modules-->
+          <script src="app/login/login.module.js"></script>
+          <script src="app/services/service.module.js"></script>
+          <script src="app/directives/directive.module.js"></script>
+          <script src="app/filters/filter.module.js"></script>
+          <!--controllers-->
+          <script src="app/login/login.controller.js"></script>
+          <script src="app/admin/admin.controller.js"></script>
+          <script src="app/dashboard/dashboard.controller.js"></script>
+          <!--services-->
+          <script src="app/services/common.service.js"></script>
+          <script src="app/services/login.service.js "></script>
+          <!--filters-->
+          <script src="app/filters/filter.module.js"></script>
+          <script src="app/filters/capitalizeFirst.filter.js"></script>
+          <!--directives-->
+          <script src="app/directives/utility.directive.js"></script>
+          <script src="app/directives/sortIcon.directive.js"></script>
+          <!-- components-->
+          <!-- endbuild -->
+        </body>
+      </html>

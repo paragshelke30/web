@@ -1,0 +1,22 @@
+{
+  "name": "web-admin",
+  "version": "0.0.1",
+  "dependencies": {
+    "angular": "^1.6.1",
+    "angular-ui-router": "^0.4.2",
+    "angular-material": "^1.1.3",
+    "lodash": "^4.17.4",
+    "font-awesome": "^4.7.0",
+    "object-fit-images": "*",
+    "angular-sanitize": "^1.6.2",
+    "nf-localization": "../packages/nf-localization#^2.0.2",
+    "angular-toastr": "^2.1.1"
+  },
+  "devDependencies": {
+    "angular-scenario": ">=1.2.*",
+    "aws-sdk": "aws-sdk-js#^2.3.9"
+  },
+  "resolutions": {
+    "angular": "^1.6.1"
+  }
+}

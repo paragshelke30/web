@@ -1,0 +1,15 @@
+{
+  "login": {
+    "title": "Web AppsNb",
+    "placeholder": {
+      "name": "NameNb",
+      "password": "PasswordNb"
+    },
+    "button": {
+      "login": "Log inNb"
+    }
+  },
+  "home": {
+    "dashboard": "DashboardNb"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "login": {
+    "title": "Web Apps",
+    "placeholder": {
+      "name": "Name",
+      "password": "Password"
+    },
+    "button": {
+      "login": "Log in"
+    }
+  },
+  "home": {
+    "dashboard": "Dashboard"
+  }
+}
