@@ -1,15 +1,19 @@
 {
   "login": {
-    "title": "Web AppsNb",
+    "title": "Web Apps",
     "placeholder": {
-      "name": "NameNb",
-      "password": "PasswordNb"
+      "name": "Name",
+      "password": "Password"
     },
     "button": {
-      "login": "Log inNb"
+      "login": "Log in"
+    },
+    "organizations": {
+      "description": "Please select the organization !",
+      "message": "Invalid organization"
     }
   },
   "home": {
-    "dashboard": "DashboardNb"
+    "dashboard": "Dashboard"
   }
 }

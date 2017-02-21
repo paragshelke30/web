@@ -7,6 +7,10 @@
     },
     "button": {
       "login": "Log in"
+    },
+    "organizations": {
+      "description": "Please select the organization !",
+      "message": "Invalid organization"
     }
   },
   "home": {

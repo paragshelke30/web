@@ -23,33 +23,23 @@
     var vm = this;
 
     vm.translations = $rootScope.translations.login;
+    vm.isLogin = false;
     vm.user = {};
     vm.user.username = 'Lexicon';
     vm.user.password = 'Admin';
     vm.login = login;
 
     function login(ev) {
-      loginService.selectOrganization(ev, {
-        organizations: [{
-            Organization_Name: 'Lexicon Network',
-            id: '2345'
-          },
-          {
-            Organization_Name: 'Lexicon Network 123',
-            id: '456456sdf'
-          }
-        ]
-      });
-
-      /*loginService.login(vm.user)
+      vm.isLogin = true;
+      loginService.login(vm.user)
         .then(function (data) {
-          console.info(data.data);
-          $state.go('admin.dashboard');
+          vm.isLogin = true;
           loginService.selectOrganization(ev, data.data);
         }, function (error) {
+          vm.isLogin = false;
           $log.error('error', error);
           commonService.toast('error', error.data);
-        });*/
+        });
     }
   }
 })();

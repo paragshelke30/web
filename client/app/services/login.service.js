@@ -10,7 +10,10 @@
     '$window',
     '$http',
     '$httpParamSerializer',
-    '$mdDialog'
+    '$mdDialog',
+    '$state',
+    'commonService',
+    '$rootScope'
   ];
 
   function loginService(
@@ -18,11 +21,15 @@
     $window,
     $http,
     $httpParamSerializer,
-    $mdDialog) {
+    $mdDialog,
+    $state,
+    commonService,
+    $rootScope) {
     var service = {
-      login: login,
-      selectOrganization: selectOrganization
-    };
+        login: login,
+        selectOrganization: selectOrganization
+      },
+      translations = $rootScope.translations.login;
 
     return service;
 
@@ -64,11 +71,14 @@
 
       function DialogController($scope, $mdDialog, organizations) {
         $scope.organizations = organizations;
-        $scope.organizationSelect = {};
 
         $scope.setOrganization = function () {
-          console.log('getOrganization', $scope.organizationSelect);
-          $scope.hide();
+          if ($scope.organizationSelect) {
+            $scope.hide();
+            $state.go('admin.dashboard');
+          } else {
+            commonService.toast('error', translations.organizations);
+          }
         };
 
         $scope.hide = function () {
