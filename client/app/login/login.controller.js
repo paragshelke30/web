@@ -29,15 +29,27 @@
     vm.login = login;
 
     function login(ev) {
-      loginService.login(vm.user)
+      loginService.selectOrganization(ev, {
+        organizations: [{
+            Organization_Name: 'Lexicon Network',
+            id: '2345'
+          },
+          {
+            Organization_Name: 'Lexicon Network 123',
+            id: '456456sdf'
+          }
+        ]
+      });
+
+      /*loginService.login(vm.user)
         .then(function (data) {
           console.info(data.data);
-          /* $state.go('admin.dashboard');*/
+          $state.go('admin.dashboard');
           loginService.selectOrganization(ev, data.data);
         }, function (error) {
           $log.error('error', error);
           commonService.toast('error', error.data);
-        });
+        });*/
     }
   }
 })();

@@ -24,6 +24,8 @@
       selectOrganization: selectOrganization
     };
 
+    return service;
+
     function login(user) {
       var deferred = $q.defer();
 
@@ -62,9 +64,10 @@
 
       function DialogController($scope, $mdDialog, organizations) {
         $scope.organizations = organizations;
-        $scope.organization = false;
+        $scope.organizationSelect = {};
 
         $scope.setOrganization = function () {
+          console.log('getOrganization', $scope.organizationSelect);
           $scope.hide();
         };
 
@@ -81,7 +84,5 @@
         };
       }
     }
-
-    return service;
   }
 })();

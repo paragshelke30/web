@@ -12,16 +12,18 @@
 
     <md-dialog-content>
       <div class="md-dialog-content">
-        <md-list-item ng-repeat="organization in organizations">
-
-          <p> {{ organization.Organization_Name }} </p>
-          <md-checkbox class="md-secondary" ng-model="$scope.organization"></md-checkbox>
-        </md-list-item>
+        <md-radio-group ng-model="organizationSelect" >
+          <md-list-item ng-repeat="organization in organizations">
+            <md-radio-button flex ng-value="organization" class="md-primary">
+              {{organization.Organization_Name}}
+            </md-radio-button>
+          </md-list-item>
+        </md-radio-group>
       </div>
     </md-dialog-content>
 
     <md-dialog-actions layout="row" layout-align="center center">
-      <md-button ng-click="$scope.setOrganization()">
+      <md-button ng-click="setOrganization()">
         OK
       </md-button>
     </md-dialog-actions>
