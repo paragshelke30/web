@@ -75,6 +75,7 @@
 
         $scope.setOrganization = function () {
           var config;
+
           if ($scope.organizationSelect) {
             $scope.hide();
             config = JSON.parse(localStorage.getItem('config'));
@@ -116,7 +117,7 @@
           clientId: 'default',
           clientSecret: 'SECRET',
           orgId: config.organization.id,
-          user_id: config.user.id
+          userId: config.user.id
         }
       }).then(deferred.resolve, deferred.reject);
 

@@ -12,6 +12,6 @@
 
     vm.translations = $rootScope.translations.admin;
     vm.displayName = config.user.Firstname + ' ' + config.user.Lastname;
-    vm.organizationName = config.organization.Organization_Name;
+    vm.organizationName = config.organization['Organization_Name'];
   }
 })();

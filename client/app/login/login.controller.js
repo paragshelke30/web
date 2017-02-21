@@ -19,7 +19,6 @@
     commonService,
     $state,
     $log) {
-
     var vm = this;
 
     vm.translations = $rootScope.translations.login;
@@ -38,11 +37,13 @@
           loginService.selectOrganization(ev, data.data);
         }, function (error) {
           vm.isLogin = false;
+
           if (error.data) {
             commonService.toast('error', error.data);
           } else {
             commonService.toast('error', vm.translations);
           }
+
           $log.error('error', error);
         });
     }
