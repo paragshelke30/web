@@ -1,25 +1,4 @@
 <div>
-  <h1>Admin</h1>
-<!--  <div>
-    <mdt-table paginated-rows="{isEnabled: true, rowsPerPageValues: [5,10,20,50]}"
-      mdt-row-paginator="paginatorCallback(page, pageSize)"
-      mdt-row-paginator-error-message="Error happened during loading nutritions."
-      mdt-row="{
-          'table-row-id-key': '_id',
-          'column-keys':
-            [
-              'employment.fname',
-              'employment.address',
-              'employment.emailid',
-              'employment.posapply'
-            ]
-        }">
-      <mdt-header-row>
-        <mdt-column align-rule="left">Fname</mdt-column>
-        <mdt-column align-rule="right">Address</mdt-column>
-        <mdt-column align-rule="right">Email</mdt-column>
-        <mdt-column align-rule="right">Posapply</mdt-column>
-      </mdt-header-row>
-    </mdt-table>
-  </div>-->
+  <h1>{{vm.translations.welcomeNote}}{{vm.displayName}}!!</h1>
+  <h3>{{vm.organizationName}}!!</h3>
 </div>

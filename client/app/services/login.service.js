@@ -27,7 +27,8 @@
     $rootScope) {
     var service = {
         login: login,
-        selectOrganization: selectOrganization
+        selectOrganization: selectOrganization,
+        getConfig: getConfig
       },
       translations = $rootScope.translations.login;
 
@@ -73,9 +74,18 @@
         $scope.organizations = organizations;
 
         $scope.setOrganization = function () {
+          var config;
           if ($scope.organizationSelect) {
             $scope.hide();
-            $state.go('admin.dashboard');
+            config = JSON.parse(localStorage.getItem('config'));
+            config.organization = $scope.organizationSelect;
+            localStorage.setItem('config', JSON.stringify(config));
+
+            getConfig(config).then(function (data) {
+              $state.go('admin.dashboard');
+            }, function (error) {
+              console.log('Error getConfig', error);
+            });
           } else {
             commonService.toast('error', translations.organizations);
           }
@@ -93,6 +103,24 @@
           $mdDialog.hide(answer);
         };
       }
+    }
+
+    function getConfig(config) {
+      var deferred = $q.defer();
+
+      $http({
+        method: 'GET',
+        url: 'getConfig',
+        transformRequest: $httpParamSerializer,
+        data: {
+          clientId: 'default',
+          clientSecret: 'SECRET',
+          orgId: config.organization.id,
+          user_id: config.user.id
+        }
+      }).then(deferred.resolve, deferred.reject);
+
+      return deferred.promise;
     }
   }
 })();

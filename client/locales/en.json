@@ -11,9 +11,11 @@
     "organizations": {
       "description": "Please select the organization !",
       "message": "Invalid organization"
-    }
+    },
+    "description": "Something went wrong !",
+    "message": "Invalid Login"
   },
-  "home": {
-    "dashboard": "Dashboard"
+  "admin": {
+    "welcomeNote": "Welcome "
   }
 }

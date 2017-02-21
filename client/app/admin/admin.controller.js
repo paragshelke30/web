@@ -4,23 +4,14 @@
   angular
     .module('web-admin')
     .controller('AdminController', AdminController);
-  AdminController.$inject = ['$scope', '$http'];
+  AdminController.$inject = ['$scope', '$http', '$rootScope'];
 
-  function AdminController($scope, $http) {
-    var vm = this;
+  function AdminController($scope, $http, $rootScope) {
+    var vm = this,
+      config = JSON.parse(localStorage.getItem('config'));
 
-    $scope.paginatorCallback = paginatorCallback;
-
-    function paginatorCallback(page, pageSize) {
-      var offset = (page - 1) * pageSize;
-
-      return $http.get('http://172.25.16.59:6002/batchLimit?page=' +
-        page + '&limit=' + pageSize, {}).then(function (result) {
-        return {
-          results: result.data,
-          totalResultCount: result.data.length + pageSize
-        };
-      });
-    }
+    vm.translations = $rootScope.translations.admin;
+    vm.displayName = config.user.Firstname + ' ' + config.user.Lastname;
+    vm.organizationName = config.organization.Organization_Name;
   }
 })();

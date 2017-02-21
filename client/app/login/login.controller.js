@@ -33,12 +33,17 @@
       vm.isLogin = true;
       loginService.login(vm.user)
         .then(function (data) {
-          vm.isLogin = true;
+          vm.isLogin = false;
+          localStorage.setItem('config', JSON.stringify(data.data));
           loginService.selectOrganization(ev, data.data);
         }, function (error) {
           vm.isLogin = false;
+          if (error.data) {
+            commonService.toast('error', error.data);
+          } else {
+            commonService.toast('error', vm.translations);
+          }
           $log.error('error', error);
-          commonService.toast('error', error.data);
         });
     }
   }
