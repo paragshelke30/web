@@ -1,31 +1,35 @@
-<md-content layout="column" layout-align="center center">
-  <form ng-submit="vm.login($event)">
-    <md-card md-theme="dark-grey" md-theme-watch>
-      <div layout="column" layout-align="center center" layout-margin>
-        <img class="logo-image" src="images/images/logo.png" />
-        <div class="md-headline">{{vm.translations.title}}</div>
-      </div>
-      <md-card-content>
-        <md-input-container class="md-icon-float md-block">
-          <label>{{vm.translations.placeholder.name}}</label>
-          <md-icon md-svg-src="images/mi/account-outline.svg"></md-icon>
-          <input ng-model="vm.user.username" type="text" required md-no-asterisk/>
-        </md-input-container>
-        <md-input-container class="md-icon-float md-block">
-          <label>{{vm.translations.placeholder.password}}</label>
-          <md-icon md-svg-src="images/mi/lock-outline.svg" class="name"></md-icon>
-          <input ng-model="vm.user.password" type="password" required md-no-asterisk/>
-        </md-input-container>
-      </md-card-content>
-      <md-card-actions layout="row" layout-align="end center">
-        <md-button type="submit" class="md-raised md-primary" ng-disabled="vm.isLogin">
-          <span ng-if="!vm.isLogin">{{vm.translations.button.login}}</span>
-          <div ng-if="vm.isLogin" layout="row" layout-sm="column" layout-align="center center">
-            <md-progress-circular md-mode="indeterminate" class="md-accent" md-diameter="20px">
-            </md-progress-circular>
+<div class="flexbox-parent">
+  <div layout="row" layout-align="center center" class="loginForm">
+    <md-content flex="40">
+      <form ng-submit="vm.login($event)" flex>
+        <md-card md-theme="dark-grey" md-theme-watch>
+          <div layout="column" layout-align="center center" layout-margin>
+            <img class="logo-image" src="images/images/logo.png" />
+            <div class="md-headline">{{vm.translations.title}}</div>
           </div>
-        </md-button>
-      </md-card-actions>
-    </md-card>
-  </form>
-</md-content>
+          <md-card-content>
+            <md-input-container class="md-icon-float md-block">
+              <label>{{vm.translations.placeholder.name}}</label>
+              <md-icon md-svg-src="images/mi/account-outline.svg"></md-icon>
+              <input ng-model="vm.user.username" type="text" required md-no-asterisk/>
+            </md-input-container>
+            <md-input-container class="md-icon-float md-block">
+              <label>{{vm.translations.placeholder.password}}</label>
+              <md-icon md-svg-src="images/mi/lock-outline.svg" class="name"></md-icon>
+              <input ng-model="vm.user.password" type="password" required md-no-asterisk/>
+            </md-input-container>
+          </md-card-content>
+          <md-card-actions layout="row" layout-align="end center">
+            <md-button type="submit" class="md-raised md-primary" ng-disabled="vm.isLogin">
+              <span ng-if="!vm.isLogin">{{vm.translations.button.login}}</span>
+              <div ng-if="vm.isLogin" layout="row" layout-sm="column" layout-align="center center">
+                <md-progress-circular md-mode="indeterminate" class="md-accent" md-diameter="20px">
+                </md-progress-circular>
+              </div>
+            </md-button>
+          </md-card-actions>
+        </md-card>
+      </form>
+    </md-content>
+  </div>
+</div>

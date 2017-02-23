@@ -9,6 +9,7 @@
 
   function configure($httpProvider, toastrConfig) {
     var API_URL = 'http://172.25.16.45:6002/';
+    /*var API_URL = 'http://localhost:6002/';*/
 
     activate();
 
@@ -16,6 +17,7 @@
       $httpProvider.interceptors.push(apiInterceptor);
       $httpProvider.defaults.headers.post['Accept'] = 'application/json';
       $httpProvider.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded';
+      /*$httpProvider.interceptors.push('authInterceptor');*/
 
       angular.extend(toastrConfig, {
         positionClass: 'toast-bottom-full-width',

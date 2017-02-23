@@ -10,7 +10,8 @@
     'loginService',
     'commonService',
     '$state',
-    '$log'
+    '$log',
+    '$http'
   ];
 
   function LoginController(
@@ -18,7 +19,8 @@
     loginService,
     commonService,
     $state,
-    $log) {
+    $log,
+    $http) {
     var vm = this;
 
     vm.translations = $rootScope.translations.login;
@@ -32,9 +34,11 @@
       vm.isLogin = true;
       loginService.login(vm.user)
         .then(function (data) {
+          var config = data.data;
           vm.isLogin = false;
-          localStorage.setItem('config', JSON.stringify(data.data));
-          loginService.selectOrganization(ev, data.data);
+          localStorage.setItem('config', JSON.stringify(config));
+          /*$http.defaults.headers.common['Authorization'] = 'Bearer ' + config.token.access_token;*/
+          loginService.selectOrganization(ev, config);
         }, function (error) {
           vm.isLogin = false;
 

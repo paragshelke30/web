@@ -45,7 +45,8 @@
           clientId: 'default',
           clientSecret: 'SECRET',
           username: user.username,
-          password: user.password
+          password: user.password,
+          appId: 'LN10'
         }
       }).then(deferred.resolve, deferred.reject);
 
@@ -113,11 +114,12 @@
         method: 'GET',
         url: 'getConfig',
         transformRequest: $httpParamSerializer,
-        data: {
+        params: {
           clientId: 'default',
           clientSecret: 'SECRET',
+          appId: 'LN10',
           orgId: config.organization.id,
-          userId: config.user.id
+          userId: config.user.id,
         }
       }).then(deferred.resolve, deferred.reject);
 
