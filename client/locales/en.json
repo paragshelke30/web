@@ -1,9 +1,9 @@
 {
   "login": {
-    "title": "Web Apps",
+    "title": "Web AppscEn",
     "placeholder": {
-      "name": "Name",
-      "password": "Password"
+      "name": "NameEn",
+      "password": "PasswordEn"
     },
     "button": {
       "login": "Log in"

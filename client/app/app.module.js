@@ -12,6 +12,7 @@
       'ngSanitize',
       'ui.router',
       'nf.localization',
+      /*3rd party*/
       'toastr'
     ]);
 })();

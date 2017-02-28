@@ -46,7 +46,7 @@
           clientSecret: 'SECRET',
           username: user.username,
           password: user.password,
-          appId: 'LN10'
+          appId: '2001'
         }
       }).then(deferred.resolve, deferred.reject);
 
@@ -86,6 +86,7 @@
             getConfig(config).then(function (data) {
               $state.go('admin.dashboard');
             }, function (error) {
+              commonService.toast('error', error.data);
               console.log('Error getConfig', error);
             });
           } else {
@@ -108,8 +109,8 @@
     }
 
     function getConfig(config) {
-      var deferred = $q.defer();
-
+      var deferred = $q.defer(),
+        storageConfig = JSON.parse(localStorage.getItem('config'));
       $http({
         method: 'GET',
         url: 'getConfig',
@@ -117,9 +118,10 @@
         params: {
           clientId: 'default',
           clientSecret: 'SECRET',
-          appId: 'LN10',
+          appId: '2001',
           orgId: config.organization.id,
           userId: config.user.id,
+          token: storageConfig.token.access_token
         }
       }).then(deferred.resolve, deferred.reject);
 
